@@ -1,6 +1,9 @@
+<!-- app/views/pages/home.html.erb -->
 <div class="banner-container">
   <div class="banner-nav-bar">
-    <div><h1><i class="fas fa-play"></i><span class="logo-title">Watch List</span></h1></div>
+    <div>
+      <h1><i class="fas fa-play"></i><span class="logo-title">Watch List</span></h1>
+    </div>
     <div>
       <ul class="banner-ul">
         <li>Login</li>
@@ -11,12 +14,11 @@
 
   <div class="banner-info">
     <div>
-      <p class="banner-title">AVENGERS COLLECTION</p>
-      <p class="banner-subtitle">All movies avaiable right now!</p>
+      <p class="banner-title">MOVIE COLLECTION</p>
+      <p class="banner-subtitle">All movies available right now!</p>
       <div class="btn-infos">
-<!--         <p class="btn-add">Add to list</p> -->
-        <p class="btn-add"><%= link_to "Add movie", new_movie_path(@movie) %></p>
-        <p class="btn-more-info"><%= link_to "Add list", new_list_path(@bookmark) %></p>
+        <p class="btn-add"><%= link_to "Add Movie", new_movie_path(@movie), class: "btn btn-primary" %></p>
+        <p class="btn-more-info"><%= link_to "Add List", new_list_path(@bookmark), class: "btn btn-secondary" %></p>
       </div>
     </div>
   </div>
@@ -27,32 +29,24 @@
 </div>
 
 <div class="container">
-
-<div class="lists">
-  <% @lists.each do |list| %>
-  <div class="left-border">
-
-    <div>
-      <div class="list-box">
-        <div class="row">
-          <div class="col-lg-6">
-            <!--
-            -->
-          </div>
-          <div class="col-lg-6">
-            <h3 class="list-title"><%= list.name %> List</h3>
-            <p class="click-text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac interdum tellus. </p>
-            <span class="click">
-              <%= link_to "More info", list_path(list), class:"btn-click"%>
-            </span>
-
+  <div class="lists">
+    <% @lists.each do |list| %>
+      <div class="left-border">
+        <div class="list-box">
+          <div class="row">
+            <div class="col-lg-6">
+              <!-- Add image or other content for each list -->
+            </div>
+            <div class="col-lg-6">
+              <h3 class="list-title"><%= list.name %> List</h3>
+              <p class="click-text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac interdum tellus.</p>
+              <span class="click">
+                <%= link_to "More Info", list_path(list), class: "btn btn-info btn-click" %>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-
 </div>

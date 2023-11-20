@@ -1,12 +1,23 @@
 <div class="container">
-  <div class="">
-    <div class="row new-form">
-      <div class="col-lg-6 left-bg-new">
+  <div class="movie-form-container">
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- Left Section (if needed) -->
       </div>
-      <div class="col-lg-6 right-bg" >
-        <%= render 'form', movie: @movie %>
+      <div class="col-lg-6">
+        <!-- Movie Form Section -->
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Movie Form</h5>
+            <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <%= render 'form', movie: @movie %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
 </div>

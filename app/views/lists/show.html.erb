@@ -8,7 +8,7 @@
         <div class="btn-style">
           <p><%= link_to "Bookmark",  new_list_bookmark_path(@list), class: 'btn-book' %></p>
           <p><%= link_to "Edit", edit_list_path(@list), class: 'btn-edit' %></p>
-          <p><%= link_to "Delete", edit_list_path(@list), class: 'btn-delete' %></p>
+        <p>  <%= link_to "Delete", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn-delete' %></p>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac interdum tellus. Ut sed nibh ornare, ultrices lorem nec, tempus quam. Aliquam vitae nulla sit amet erat lacinia eleifend ut vitae lectus.</p>
       </div>
@@ -22,6 +22,7 @@
       <div class="box-poster">
         <img class="img-poster" src="<%= movie.poster_url %>">
         <p class="movie-path"><%= link_to movie.title, movie_path(movie) %></p>
+          <%# <p><%= link_to "Delete", bookmark_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn-delete' %>
       </div>
       <% end %>
     </div>

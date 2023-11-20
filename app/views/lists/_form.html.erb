@@ -1,4 +1,4 @@
-<%= simple_form_for(list) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit class: 'btn-submit-movie mt-3' %>
+<%= simple_form_for(list, html: { class: 'modern-form' }) do |f| %>
+  <%= f.input :name, label: 'List Name', placeholder: 'Enter list name', required: true, class: 'form-control' %>
+  <%= f.submit 'Create List', class: 'btn btn-primary mt-3' %>
 <% end %>

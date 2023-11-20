@@ -1,23 +1,25 @@
+<!-- app/views/movies/show.html.erb -->
 <div class="container">
   <div class="row movie-display">
     <div class="col-lg-6">
-      <img class="img-display-poster" src="<%= @movie.poster_url %>" >
+      <img class="img-display-poster" src="<%= @movie.poster_url %>" alt="<%= @movie.title %> Poster">
     </div>
+
     <div class="col-lg-6 movie-display-content">
       <div class="movie-header-content">
-        <p class="movie-title"><%= @movie.title %></p>
-        <p class="btn-movie-edit"><%= link_to "Edit movie", edit_movie_path(@movie) %></p>
+        <h1 class="movie-title"><%= @movie.title %></h1>
+        <p class="btn-movie-edit"><%= link_to "Edit Movie", edit_movie_path(@movie), class: "btn btn-primary" %></p>
       </div>
 
-      <div>
-        <p><span class="movie-rating"><%= @movie.rating %></span></p>
+      <div class="movie-rating">
+        <p><strong>Rating:</strong> <%= @movie.rating %></p>
       </div>
 
-        <p>
-          <%= @movie.overview %>
-        </p>
-
-
+      <div class="movie-overview">
+        <p><strong>Overview:</strong></p>
+        <p><%= @movie.overview %></p>
+      </div>
     </div>
   </div>
 </div>
+

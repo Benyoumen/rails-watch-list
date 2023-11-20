@@ -1,8 +1,23 @@
-
-<%= simple_form_for(movie) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :rating %>
-  <%= f.input :overview %>
-  <%= f.input :poster_url %>
-  <%= f.submit class: 'btn-submit-movie mt-3' %>
-<% end %>
+<div class="container">
+  <div class="movie-form-container text-center">
+    <div class="row new-form">
+      <div class="col-lg-6 right-bg">
+        <%= simple_form_for(movie, html: { class: 'modern-form' }) do |f| %>
+          <div class="form-header">
+            <h2>Create a New Movie</h2>
+          </div>
+          <div class="form-body">
+            <%= f.input :title, label: false, placeholder: 'Enter movie title', required: true, class: 'form-control mb-3' %>
+            <%= f.input :rating, label: false, placeholder: 'Enter movie rating', required: true, class: 'form-control mb-3' %>
+            <%= f.input :overview, label: false, placeholder: 'Enter movie overview', required: true, class: 'form-control mb-3' %>
+            <%= f.input :poster_url, label: false, placeholder: 'Enter movie poster URL', required: true, class: 'form-control mb-3' %>
+            <%= f.submit 'Save Movie', class: 'btn btn-primary btn-submit-movie' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-lg-6 left-bg-new">
+        <!-- Add content or background for the left side if needed -->
+      </div>
+    </div>
+  </div>
+</div>
